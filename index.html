@@ -1,0 +1,48 @@
+REG="212224230032"; NAME="Barani S S"; mkdir -p ShoppingMall && cd ShoppingMall && \
+cat > index.html <<EOF
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head><title>Grand Plaza Shopping Mall - Barani SS(212224230032 )</title></head>
+<frameset rows="110,*" frameborder="1" border="2">
+  <frame src="header.html" name="header" scrolling="no">
+  <frameset cols="220,*">
+    <frame src="nav.html" name="directory">
+    <frame src="home.html" name="content">
+  </frameset>
+</frameset>
+</html>
+EOF
+cat > header.html <<EOF
+<html><head><style>
+body{margin:0;background:linear-gradient(90deg,#4a148c,#e91e63);color:#fff;text-align:center;font-family:Georgia,serif}
+h1{margin:12px 0 4px;font-size:34px;letter-spacing:2px}
+p{margin:0;font-style:italic;font-size:17px}
+small{display:block;margin-top:6px;font-family:Arial,sans-serif;font-size:12px;opacity:.9}
+</style></head><body>
+<h1>&#128717; GRAND PLAZA MALL</h1>
+<p>Shop. Dine. Watch. Enjoy &mdash; All Under One Roof!</p>
+<small>Barani S S| Reg. No: 212224230032</small>
+</body></html>
+EOF
+cat > nav.html <<EOF
+<html><head><style>
+body{background:#f3e5f5;font-family:Arial,sans-serif;margin:0;padding:15px}
+h3{color:#4a148c;text-align:center;border-bottom:2px solid #e91e63;padding-bottom:8px}
+a{display:block;padding:10px;margin:8px 0;background:#fff;color:#4a148c;text-decoration:none;border-left:5px solid #e91e63;border-radius:4px;font-weight:bold}
+a:hover{background:#e91e63;color:#fff}
+</style></head><body>
+<h3>Directory</h3>
+<a href="home.html" target="content">Home</a>
+<a href="fashion.html" target="content">Fashion &amp; Apparel</a>
+<a href="food.html" target="content">Food Court</a>
+<a href="cinema.html" target="content">Cinema</a>
+<a href="contact.html" target="content">Contact Us</a>
+</body></html>
+EOF
+STYLE='<style>body{font-family:Arial,sans-serif;background:#fffde7;color:#333;padding:25px;text-align:center}h2{color:#4a148c;border-bottom:3px solid #e91e63;display:inline-block;padding-bottom:6px}p{font-size:16px;line-height:1.6}li{margin:6px 0}ul{display:inline-block;text-align:left}</style>'
+echo "<html><head>$STYLE</head><body><h2>Welcome to Grand Plaza Mall</h2><p>Your one-stop destination for fashion, food and entertainment.<br>Over 150 stores, a 6-screen cinema and a 40-outlet food court.</p><p><b>Open Daily: 10:00 AM - 10:00 PM</b></p></body></html>" > home.html
+echo "<html><head>$STYLE</head><body><h2>Fashion &amp; Apparel</h2><p>Discover the latest trends from top brands.</p><ul><li>Men's Wear</li><li>Women's Wear</li><li>Kids' Collection</li><li>Footwear &amp; Accessories</li></ul></body></html>" > fashion.html
+echo "<html><head>$STYLE</head><body><h2>Food Court</h2><p>Taste the world under one roof.</p><ul><li>South Indian Meals</li><li>North Indian &amp; Tandoor</li><li>Chinese &amp; Fast Food</li><li>Ice Creams &amp; Desserts</li></ul></body></html>" > food.html
+echo "<html><head>$STYLE</head><body><h2>Cinema</h2><p>Enjoy blockbusters in our 6-screen multiplex with Dolby sound.</p><ul><li>Show Times: 10 AM, 1 PM, 4 PM, 7 PM, 10 PM</li><li>Online booking available</li><li>Premium recliner seating</li></ul></body></html>" > cinema.html
+echo "<html><head>$STYLE</head><body><h2>Contact Us</h2><p>Grand Plaza Mall, Anna Salai, Chennai - 600002<br>Phone: +91 44 1234 5678<br>Email: info@grandplazamall.com</p><p><i>Designed by $NAME ($REG)</i></p></body></html>" > contact.html
+(xdg-open index.html || open index.html || start index.html) 2>/dev/null
